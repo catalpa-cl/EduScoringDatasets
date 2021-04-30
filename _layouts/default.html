@@ -203,26 +203,27 @@ function sortTable(n) {
             // If so, mark as a switch and break the loop:
             shouldSwitch = true;
             break;
+            }
           } else {
                 if (Number(x.innerHTML) > Number(y.innerHTML)) {
                 shouldSwitch = true;
                 break;
               }
           }
-        }
+          
       } else if (dir == "desc") {
         if (isNaN(x.innerHTML)) {
           if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
             // If so, mark as a switch and break the loop:
             shouldSwitch = true;
             break;
+            }
           } else {
                 if (Number(x.innerHTML) < Number(y.innerHTML)) {
                 shouldSwitch = true;
                 break;
               }
           }
-        }
     }
     if (shouldSwitch) {
       /* If a switch has been marked, make the switch
@@ -240,6 +241,7 @@ function sortTable(n) {
       }
     }
   }
+}
 }
 </script>
       
