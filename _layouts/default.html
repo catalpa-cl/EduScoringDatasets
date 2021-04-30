@@ -44,14 +44,14 @@
 <table id="toBeSorted">
 <thead>
 <tr>
-<th onclick="sortTable(0)" style="cursor: pointer">Corpus_Name</th>
-<th onclick="sortTable(1)" style="cursor: pointer">Link/Paper</th>
-<th onclick="sortTable(2)" style="cursor: pointer">Population</th>
-<th onclick="sortTable(3)" style="cursor: pointer">Language</th>
-<th onclick="sortTable(4)" style="cursor: pointer">Task</th>
-<th onclick="sortTable(5)" style="cursor: pointer">Modality</th>
-<th onclick="sortTable(6)" style="cursor: pointer">prompts</th>
-<th onclick="sortTable(7)" style="cursor: pointer">answers</th>
+<th onclick="sortViaColumn(0)" style="cursor: pointer">Corpus_Name</th>
+<th onclick="sortViaColumn(1)" style="cursor: pointer">Link/Paper</th>
+<th onclick="sortViaColumn(2)" style="cursor: pointer">Population</th>
+<th onclick="sortViaColumn(3)" style="cursor: pointer">Language</th>
+<th onclick="sortViaColumn(4)" style="cursor: pointer">Task</th>
+<th onclick="sortViaColumn(5)" style="cursor: pointer">Modality</th>
+<th onclick="sortViaColumn(6)" style="cursor: pointer">prompts</th>
+<th onclick="sortViaColumn(7)" style="cursor: pointer">answers</th>
 </tr>
 </thead>
 <tbody>
@@ -174,7 +174,7 @@
       
      
       <script>
-function sortTable(n) {
+function sortViaColumn(n) {
   var table, needswitch, rowcount, switching, i, one, two, dir, switchcount = 0;
   table = document.getElementById("toBeSorted");
   switching = true;
