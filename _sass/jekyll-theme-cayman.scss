@@ -167,11 +167,10 @@ a {
   }
 
   @include large {
-    max-width: 70%;
+    max-width: max-content;
     padding: 2rem 6rem;
     margin: 0 auto;
     font-size: 1.1rem;
-    textalign: center;
   }
 
   @include medium {
