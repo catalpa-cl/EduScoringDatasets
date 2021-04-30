@@ -41,17 +41,17 @@
       
       <h2 id="datasets-for-automatic-scoring-of-educational-text-data">Datasets for Automatic Scoring of Educational Text Data</h2>
 <p>This page provides an overview of freely available automatic content scoring datasets</p>
-<table>
+<table id="toBeSorted">
 <thead>
 <tr>
-<th>Corpus_Name</th>
-<th>Link/Paper</th>
-<th>Population</th>
-<th>Language</th>
-<th>Task</th>
-<th>Modality</th>
-<th style="text-align:right">prompts</th>
-<th style="text-align:right">answers</th>
+<th onclick="sortTable(0)">Corpus_Name</th>
+<th onclick="sortTable(1)">Link/Paper</th>
+<th onclick="sortTable(2)">Population</th>
+<th onclick="sortTable(3)">Language</th>
+<th onclick="sortTable(4)">Task</th>
+<th onclick="sortTable(5)">Modality</th>
+<th onclick="sortTable(6)" style="text-align:right">prompts</th>
+<th onclick="sortTable(7)" style="text-align:right">answers</th>
 </tr>
 </thead>
 <tbody>
@@ -182,28 +182,11 @@
       
       {{ content }}
       
-      
-       <table style="width:100%" id="test">
-  <tr>
-    <th onclick="sortTable(0)">Firstname</th>
-    <th onclick="sortTable(1)">Lastname</th>
-    <th onclick="sortTable(2)">Age</th>
-  </tr>
-  <tr>
-    <td>Jill</td>
-    <td>Smith</td>
-    <td>50</td>
-  </tr>
-  <tr>
-    <td>Eve</td>
-    <td>Jackson</td>
-    <td>94</td>
-  </tr>
-</table> 
+     
       <script>
 function sortTable(n) {
   var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
-  table = document.getElementById("test");
+  table = document.getElementById("toBeSorted");
   switching = true;
   // Set the sorting direction to ascending:
   dir = "asc";
