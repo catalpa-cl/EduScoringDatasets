@@ -175,71 +175,53 @@
      
       <script>
 function sortTable(n) {
-  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+  var table, needswitch, rowcount, switching, i, one, two, dir, switchcount = 0;
   table = document.getElementById("toBeSorted");
   switching = true;
-  // Set the sorting direction to ascending:
-  dir = "asc";
-  /* Make a loop that will continue until
-  no switching has been done: */
+  dir = "up";
   while (switching) {
-    // Start by saying: no switching is done:
     switching = false;
-    rows = table.rows;
-    /* Loop through all table rows (except the
-    first, which contains table headers): */
-    for (i = 1; i < (rows.length - 1); i++) {
-      // Start by saying there should be no switching:
-      shouldSwitch = false;
-      /* Get the two elements you want to compare,
-      one from current row and one from the next: */
-      x = rows[i].getElementsByTagName("TD")[n];
-      y = rows[i + 1].getElementsByTagName("TD")[n];
-      /* Check if the two rows should switch place,
-      based on the direction, asc or desc: */
+    rowcount = table.rows;
+    for (i = 1; i < (rowcount.length - 1); i++) {
+      needswitch = false;
+      one = rowcount[i].getElementsByTagName("TD")[n];
+      two = rowcount[i + 1].getElementsByTagName("TD")[n];
       
-      if (dir == "asc") {
-      	if (isNaN(x.innerHTML)) {
-        	if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-          	// If so, mark as a switch and break the loop:
-          	shouldSwitch = true;
+      if (dir == "up") {
+      	if (isNaN(one.innerHTML)) {
+        	if (one.innerHTML.toLowerCase() > two.innerHTML.toLowerCase()) {
+          	needswitch = true;
           	break;
         	}
         } else {
-        	if (Number(x.innerHTML) > Number(y.innerHTML)) {
-  					shouldSwitch = true;
+        	if (Number(one.innerHTML) > Number(two.innerHTML)) {
+  					needswitch = true;
   					break;
 					}
         }
         
-      } else if (dir == "desc") {
-      	if (isNaN(x.innerHTML)) {
-        	if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-          	// If so, mark as a switch and break the loop:
-          	shouldSwitch = true;
+      } else if (dir == "down") {
+      	if (isNaN(one.innerHTML)) {
+        	if (one.innerHTML.toLowerCase() < two.innerHTML.toLowerCase()) {
+          	needswitch = true;
           	break;
         	}
         } else {
-        	if (Number(x.innerHTML) < Number(y.innerHTML)) {
-  					shouldSwitch = true;
+        	if (Number(one.innerHTML) < Number(two.innerHTML)) {
+  					needswitch = true;
   					break;
 					}
         }
       }
     }
     
-    if (shouldSwitch) {
-      /* If a switch has been marked, make the switch
-      and mark that a switch has been done: */
-      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+    if (needswitch) {
+      rowcount[i].parentNode.insertBefore(rowcount[i + 1], rowcount[i]);
       switching = true;
-      // Each time a switch is done, increase this count by 1:
       switchcount ++;
     } else {
-      /* If no switching has been done AND the direction is "asc",
-      set the direction to "desc" and run the while loop again. */
-      if (switchcount == 0 && dir == "asc") {
-        dir = "desc";
+      if (switchcount == 0 && dir == "up") {
+        dir = "down";
         switching = true;
       }
     }
