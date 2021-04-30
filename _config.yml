@@ -1,2 +1,4 @@
 theme: jekyll-theme-cayman
 future: true
+layout: single
+classes: wide
