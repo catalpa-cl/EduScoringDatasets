@@ -1,3 +1,3 @@
 # EduScoringDatasets
 
-https://ltl-ude.github.io/EduScoringDatasets/
+https://catalpa-cl.github.io/EduScoringDatasets/
